@@ -1,14 +1,7 @@
 ---
-title: "data visualization with ggplot2"
-author: "Julia Silge"
-email: "@juliasilge"
-maketitle: false
-output:
-  rmdshower::shower_presentation:
-    self_contained: false
-    katex: true
-    theme: ribbon
-    ratio: 16x10
+title: "data visualization with ggplot2 & Qplot"
+partial author: "Julia Silge"
+
 ---
 
 ##Intro to Qplot
