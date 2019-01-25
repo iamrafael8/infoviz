@@ -11,7 +11,35 @@ output:
     ratio: 16x10
 ---
 
+##Intro to Qplot
+
+
+#Get a small proportion to plot
+dsample <- diamonds[sample(nrow(diamonds),500),]
+
+
+#qplot(x, y, data)
+qplot(carat,price,data=dsample)
+#Add more measures
+qplot(carat,price,data=dsample, color = color, shape =cut)
+#Resize I - adjust size
+qplot(carat,price,data=dsample, color = color, shape =cut, size = I(3))
+#Avoid overlapping
+qplot(carat,price,data=dsample, color = color, shape =cut, size = I(3), alpha = I(3/10))
+
+#Trends and stats
+qplot(carat,price,data=dsample,  size = I(3), alpha = I(3/10), geom = c("point", "smooth"))
+#remove confidence range
+qplot(carat,price,data=dsample,  size = I(3), alpha = I(3/10), geom = c("point", "smooth"), se=FALSE)
+#Overfitting
+qplot(carat,price,data=dsample,  size = I(3), alpha = I(3/10), geom = c("point", "smooth"), se=FALSE, span=0.1)
+#Using model
+qplot(carat,price,data=dsample,  size = I(3), alpha = I(3/10), geom = c("point", "smooth"),method="lm")
+
+
+#==================================
 ## Data Visualization with ggplot2 
+#==================================
 
 <img src="figs/hex-ggplot2.png" alt="ggplot2" width="120"/>
 
